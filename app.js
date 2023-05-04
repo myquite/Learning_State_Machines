@@ -3,14 +3,14 @@ const yellowLight = document.querySelector(".yellow");
 const greenLight = document.querySelector(".green");
 
 
-// Define the traffic light states
+// Defines the traffic light states
 const TrafficLightStates = {
     RED: "red",
     GREEN: "green",
     YELLOW: "yellow"
   };
   
-  // Define the traffic light object
+  // Defines the traffic light object
   const trafficLight = {
     state: TrafficLightStates.RED,
     changeState: function () {
