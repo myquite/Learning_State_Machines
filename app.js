@@ -1,3 +1,8 @@
+const redLight = document.querySelector(".red");
+const yellowLight = document.querySelector(".yellow");
+const greenLight = document.querySelector(".green");
+
+
 // Define the traffic light states
 const TrafficLightStates = {
     RED: "red",
@@ -12,17 +17,20 @@ const TrafficLightStates = {
       switch (this.state) {
         case TrafficLightStates.RED:
           this.state = TrafficLightStates.GREEN;
-          console.log("Traffic Light is now GREEN. Go!");
+          redLight.classList.remove("active");
+          greenLight.classList.add("active");
           setTimeout(() => this.changeState(), 5000); // 5 seconds for Green
           break;
         case TrafficLightStates.GREEN:
           this.state = TrafficLightStates.YELLOW;
-          console.log("Traffic Light is now YELLOW. Slow down!");
+          greenLight.classList.remove("active");
+          yellowLight.classList.add("active");
           setTimeout(() => this.changeState(), 2000); // 2 seconds for Yellow
           break;
         case TrafficLightStates.YELLOW:
           this.state = TrafficLightStates.RED;
-          console.log("Traffic Light is now RED. Stop!");
+          yellowLight.classList.remove("active");
+          redLight.classList.add("active");
           setTimeout(() => this.changeState(), 3000); // 3 seconds for Red
           break;
       }
