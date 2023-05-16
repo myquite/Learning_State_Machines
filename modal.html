@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Modal State Machine</title>
 </head>
 <body>
-    
+    <div class="container">
+        <!-- Create a modal window that pops up when you click the delete button. There are two options when the modal is open, confirm or delete. -->
+        <!-- The modal should have two states, open and closed. -->
+        <!-- The modal should have two actions, confirm and delete. -->
+        <div>
+            <button id="delete">Delete</button>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Are you sure you want to delete this?</p>
+                <button id="confirm">Confirm</button>
+                <button id="cancel">Cancel</button>
+            </div>
+    </div>
 
-    
+
     <script src="modal.js"></script>
 </body>
 </html>
