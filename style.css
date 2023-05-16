@@ -75,7 +75,6 @@ Modal
 button {
   padding: 1rem;
   border-radius: 1rem;
-  border: none;
   background-color: #222;
   color: #fff;
   font-size: 1.5rem;
@@ -84,6 +83,8 @@ button {
 
 button#delete {
   background-color: #e74c3c;
+  border: 1px solid #c0392b;
+  transition: all .3s ease-in-out;
 }
 
 button#delete:hover {
@@ -92,6 +93,8 @@ button#delete:hover {
 
 button#confirm {
   background-color: #2ecc71;
+  border: 1px solid #27ae60;
+  transition: all .3s ease-in-out;
 }
 
 button#confirm:hover {
@@ -100,6 +103,8 @@ button#confirm:hover {
 
 button#cancel {
   background-color: #e74c3c;
+  border: 1px solid #c0392b;
+  transition: all .3s ease-in-out;
 }
 
 button#cancel:hover {
@@ -107,9 +112,20 @@ button#cancel:hover {
 }
 
 .close {
+  width: 40px;
+  text-align: center;
   font-size: 2rem;
   cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  transition: all .3s ease-in-out;
 }
+
+.close:hover {
+  color: #333;
+}
+
 
 .modal {
   position: fixed;
@@ -118,7 +134,7 @@ button#cancel:hover {
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0, .5);
+  background-color: rgba(0,0,0, .8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,11 +142,12 @@ button#cancel:hover {
   transition: all .3s ease-in-out;
 }
 
-.modal.active {
+.modal.activeModal {
   display: flex;
 }
 
 .modal-content {
+  position: relative;
   background-color: #fff;
   padding: 2rem;
   border-radius: 1rem;
@@ -138,4 +155,10 @@ button#cancel:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  transition: all .3s ease-in-out;
+}
+
+.modal-content p {
+  font-size: 1.5rem;
+  text-align: center;
 }
